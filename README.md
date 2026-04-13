@@ -56,7 +56,7 @@ db.alunos.insertMany([
 # 6. (1) Buscar os alunos
 db.alunos.find()
 
-# 7. (2) Buscar alunos do curso "ADS"
+# 7. (2) Buscar alunos do curso "ADS" ... deixando registrado que não tenho ADS como curso no meu banco. Logo o codigo não retorna nada
 db.alunos.find({ curso: "ADS" })
 
 # 8. (3) Buscar alunos com idade maior que 21
