@@ -7,7 +7,7 @@ docker run --name escola_volistica -p 27017:27017 -d mongo:latest
 # 2. Acessando o Banco (mongosh)
 docker exec -it escola_volistica mongosh
 
- 3. Criando o Banco
+# 3. Criando o Banco
 use escola
 
 # 4. Criando a Coleção
