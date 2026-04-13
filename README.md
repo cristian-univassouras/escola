@@ -1,19 +1,19 @@
 # Banco de Dados não Relacional escola
 Repositório para a avaliação da materia de Banco de Dados não Relacional
 
-1. Subindo o MongoDB com Docker
+# 1. Subindo o MongoDB com Docker
 docker run --name escola_volistica -p 27017:27017 -d mongo:latest
 
-2. Acessando o Banco (mongosh)
+# 2. Acessando o Banco (mongosh)
 docker exec -it escola_volistica mongosh
 
-3. Criando o Banco
+ 3. Criando o Banco
 use escola
 
-4. Criando a Coleção
+# 4. Criando a Coleção
 db.createCollection("alunos")
 
-5. Inserindo Alunos
+# 5. Inserindo Alunos
 db.alunos.insertMany([
   {
     "nome": "Giba",
@@ -53,31 +53,31 @@ db.alunos.insertMany([
 ])
 
 
-6. (1) Buscar os alunos
+# 6. (1) Buscar os alunos
 db.alunos.find()
 
-7. (2) Buscar alunos do curso "ADS"
+# 7. (2) Buscar alunos do curso "ADS"
 db.alunos.find({ curso: "ADS" })
 
-8. (3) Buscar alunos com idade maior que 21
+# 8. (3) Buscar alunos com idade maior que 21
 db.alunos.find({ idade: { $gt: 21 } })
 
-9. (4) Atualizar a idade de um aluno
+# 9. (4) Atualizar a idade de um aluno
 db.alunos.updateOne(
   { nome: "Serginho" },
   { $set: { idade: 23 } }
 )
 
-10. (5) Adicionar uma nova nota a um aluno
+# 10. (5) Adicionar uma nova nota a um aluno
 db.alunos.updateOne(
   { nome: "Giba" },
   { $push: { notas: 10 } }
 )
 
-11. (6) Remover um aluno
+# 11. (6) Remover um aluno
 db.alunos.deleteOne({ nome: "Fofão" })
 
-12. (7) Média de notas por aluno
+# 12. (7) Média de notas por aluno
 db.alunos.aggregate([
   {
     $project: {
@@ -88,7 +88,7 @@ db.alunos.aggregate([
   }
 ])
 
-13. (8) Quantidade de alunos por curso
+# 13. (8) Quantidade de alunos por curso
 db.alunos.aggregate([
   {
     $group: {
